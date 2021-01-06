@@ -25,4 +25,16 @@ $(document).ready(function () {
             $(this).addClass("past");
         }
     })
+
+    $(".saveBtn").on("click", function() {
+        // get nearby values
+        var userTask = $(this).siblings(".description").val();
+        var timeBlock = $(this).parent().attr("id");
+    
+        console.log("task = ", userTask);
+        console.log("time-slot =", timeBlock);
+    
+        // save the value in localStorage as time
+        localStorage.setItem(timeBlock, JSON.stringify(userTask))
+      });
 })
